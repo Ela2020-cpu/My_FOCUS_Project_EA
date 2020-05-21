@@ -561,9 +561,6 @@ In this project, the emphasis is placed on the investigations to determine the o
 <p>This section will demonstrate the different visuals you might want use to show off your
 project. Don’t feel the need to go overboard, this is supposed to give a taste of the work you are
 doing rather than being a publication ready document.</p>
-<p>To get tables formatting correctly, use <code>knitr::kable</code> to convert the table to html format. If
-you also want to have alternate row highlighting, pass the result to <code>kable_styling(&#39;striped&#39;)</code>
-from the <code>kableExtra</code> package.</p>
 <p><strong>Tables</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(gapminder, <span class="dt">n =</span> <span class="dv">5</span>), <span class="dt">format =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;A table of data&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="st">&quot;striped&quot;</span>)</a></code></pre></div>

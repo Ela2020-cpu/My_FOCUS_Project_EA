@@ -40,9 +40,10 @@ This section will demonstrate the different visuals you might want use to show o
 project. Don't feel the need to go overboard, this is supposed to give a taste of the work you are
 doing rather than being a publication ready document.
 
-To get tables formatting correctly, use `knitr::kable` to convert the table to html format. If
-you also want to have alternate row highlighting, pass the result to `kable_styling('striped')` 
-from the `kableExtra` package.
+```{r}
+
+```
+
 
 **Tables**
 ```{r mytable, out.width='100%', echo = T}
