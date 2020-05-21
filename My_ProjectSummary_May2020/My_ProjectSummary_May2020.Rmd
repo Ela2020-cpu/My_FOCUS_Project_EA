@@ -37,9 +37,7 @@ In the current stage of the project, the aim is to familiarise ourselves with th
 ## Preliminary results
 To get an overview of decommissioned and abandoned wells, we need to know:
 •	The number of wells abandoned and their distributions among all the basins in NT
-
-
-
+•	The time period at which the abandonment processes of gas wells has happened 
 ```{r preliminary_code, echo=TRUE}
 library(tidyverse)
 library(readxl)
