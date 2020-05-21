@@ -35,10 +35,10 @@ In this project, the emphasis is placed on the investigations to determine the o
 In the current stage of the project, the aim is to familiarise ourselves with the petroleum wells database in the NT. The scope of this project is limited to onshore gas wells in the NT which also includes the decommissioning of exploration and production wells.
 
 ## Preliminary results
-To get an overview of decommissioned and abandoned wells, we need to know:
-•	The number of wells abandoned and their distributions among all the basins in NT
-•	The time period at which the abandonment processes of gas wells has happened 
-```{r preliminary_code, echo=TRUE}
+To get an overview of decommissioned and abandoned wells, we need to know:  
+•	The number of wells abandoned and their distributions among all the basins in NT  
+•	The time period at which the abandonment processes of **gas** wells has happened  
+```{r preliminary_code, echo=FALSE}
 library(tidyverse)
 library(readxl)
 library(ggplot2)
@@ -57,16 +57,14 @@ ggplot(data=groupbybasin,mapping = aes(x=Basin,y=Number_of_Wells))+geom_bar(stat
 ggplot(data=main_file,mapping = aes(x=Basin,y=RigReleaseDate,color=HydrocarbonShows))+geom_point()+
   theme_minimal()+theme(axis.text.x = element_text(angle = 90))+ scale_y_continuous(limits=c(1950,2020),breaks=c(1950,1960,1970,1980,1990,2000,2010,2020),
  label=c("1950","1960","1970","1980","1990","2000","2010","2020"))+
-scale_colour_manual(values = c("darkblue", "#FF9999", "#FF9999","#FF9999", "darkblue", "#FF9999", "darkblue", "#FF9999"))+
-transition_states(HydrocarbonShows)
+scale_colour_manual(values = c("darkblue", "#FF9999", "#FF9999","#FF9999", "darkblue", "#FF9999", "darkblue", "#FF9999"))#+transition_states(HydrocarbonShows)
 
 ```
 
 
-**Tables**
-```{r mytable, out.width='100%', echo = T}
-knitr::kable(head(gapminder, n = 5), format = "html", caption = "A table of data") %>% 
-  kable_styling("striped")
+### Specific investigations on Amadeus Basin
+
+
 ```
 
 **Images from a file**
