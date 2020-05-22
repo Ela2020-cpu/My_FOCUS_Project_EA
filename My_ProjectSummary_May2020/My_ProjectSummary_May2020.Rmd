@@ -66,11 +66,35 @@ cp
 
 ### Specific investigations on Amadeus Basin
 Amadeus Basin held the greatest number of abandoned wells in the NT. Therefore, further investigation on regards to the number of gas wells, the utilised legislations,the operators companies, and the rig release date (abandonment date) is required.
+
+```{r Amadeus Basin, echo=FALSE}
+NT_Wells<- read_excel("C:/Data_School/My_FOCUS_Project_EA/data/NT Petroleum Wells.xlsx")
+AM <- NT_Wells %>% filter(Status=="Abandoned") %>% rename("RigReleaseDate"="Rig Release Date","TitleID"="Title ID",
+"WellName"= "Well Name","TotalDepthDate"="Total Depth Date","HydrocarbonShows"="Hydrocarbon Shows") %>% 
+  mutate(RigReleaseDate=year(RigReleaseDate))%>% drop_na(HydrocarbonShows) %>% filter (Basin=="Amadeus Basin")
+plot1<- ggplot(data=AM, mapping = aes(x=TitleID,y=RigReleaseDate,color=Purpose)
+) +
+  geom_point(size=5)+
+  scale_x_discrete(labels = abbreviate)+scale_y_continuous(limits=c(1960,2016),breaks=c(1960,1970,1980,1990,2000,2010,2016),label=c("1960","1970","1980","1990","2000","2010","2016"))+theme_minimal()+
+theme(axis.text.x= element_text(angle = 90))
+plot2<- ggplot(data = AM,
+  mapping = aes(x=TitleID,y=RigReleaseDate,shape=HydrocarbonShows,color=HydrocarbonShows))+
+  geom_point(size=5)+theme_minimal()+theme(axis.text.x = element_text(angle = 90))+scale_x_discrete(labels = abbreviate)+scale_y_continuous(limits=c(1960,2016),breaks=c(1960,1970,1980,1990,2000,2010,2016),
+label=c("1960","1970","1980","1990","2000","2010","2016"))+scale_shape_manual(values=c(15, 16, 17,18,9,10,12))+
+scale_colour_manual(values = c("lightblue", "#FF9999", "#FF9999","lightblue", "#FF9999", "lightblue", "#FF9999"))
+p_up<- plot_grid(plot1, plot2,align = "h")
+plot5<- ggplot(data = AM,
+               mapping = aes(x=TitleID,y=RigReleaseDate,shape=Legislation,color=Operator))+
+  geom_point(size=5)+theme_minimal()+theme(axis.text.x = element_text(angle = 90))+ 
+  scale_x_discrete(labels = abbreviate)+scale_y_continuous(limits=c(1960,2016),breaks=c(1960,1970,1980,1990,2000,2010,2016),label=c("1960","1970","1980","1990","2000","2010","2016"))
+cp3<- plot_grid(p_up,plot5,nrow =2)
+title <- ggdraw() + draw_label("Amadeus Basin",fontface = 'bold', x = 0,hjust = 0)+ theme(plot.margin = margin(0, 0, 0, 7))
+final<- plot_grid(title,cp3,nrow=3,rel_heights = c(0.1,1))
+ggsave(plot=final,path="C:/Data_School/My_FOCUS_Project_EA/image", width =15, height = 15, dpi = 300, filename = "AM_Basin.png")
+```
 <center>
-![](C:/Data_School/My_FOCUS_Project_EA/image/cp18.png)
+![](C:/Data_School/My_FOCUS_Project_EA/image/AM_Basin.png)
 </center>
-
-
 
 
 
