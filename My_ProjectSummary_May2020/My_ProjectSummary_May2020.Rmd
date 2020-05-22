@@ -38,7 +38,7 @@ In the current stage of the project, the aim is to familiarise ourselves with th
 To get an overview of decommissioned and abandoned wells, we need to know:  
 •	The number of wells abandoned and their distributions among all the basins in NT  
 •	The time period at which the abandonment processes of **gas** wells has happened  
-```{r preliminary_code, echo=FALSE,fig.align='center',fig.height=4}
+```{r preliminary_code, echo=FALSE,fig.align='default',fig.show='hold',fig.width=3,fig.height=3}
 library(tidyverse)
 library(readxl)
 library(ggplot2)
@@ -47,21 +47,24 @@ library(dplyr)
 library(gganimate)
 library(ggplot2)
 library(cowplot)
+library(magick)
 NT_Wells<- read_excel("C:/Data_School/My_FOCUS_Project_EA/data/NT Petroleum Wells.xlsx")
 main_file <- NT_Wells %>% filter(Status=="Abandoned") %>% rename("RigReleaseDate"="Rig Release Date","TitleID"="Title ID",
 "WellName"= "Well Name","TotalDepthDate"="Total Depth Date","HydrocarbonShows"="Hydrocarbon Shows") %>% 
   mutate(RigReleaseDate=year(RigReleaseDate))%>% drop_na(HydrocarbonShows)
-
 groupbybasin <- main_file  %>%   group_by(Basin)%>% summarise(num_rows=n())%>% arrange(num_rows) %>% rename("Number_of_Wells"="num_rows")
 p1<-ggplot(data=groupbybasin,mapping = aes(x=Basin,y=Number_of_Wells))+geom_bar(stat="identity", fill="darkblue")+
   theme_minimal()+theme(axis.text.x = element_text(angle = 90))
+
 p2<-ggplot(data=main_file,mapping = aes(x=Basin,y=RigReleaseDate,color=HydrocarbonShows))+geom_point()+
   theme_minimal()+theme(axis.text.x = element_text(angle = 90))+ scale_y_continuous(limits=c(1950,2020),breaks=c(1950,1960,1970,1980,1990,2000,2010,2020),
  label=c("1950","1960","1970","1980","1990","2000","2010","2020"))+
 scale_colour_manual(values = c("darkblue", "#FF9999", "#FF9999","#FF9999", "darkblue", "#FF9999", "darkblue", "#FF9999"))+transition_states(HydrocarbonShows)
-cp<- plot_grid(p1,p2,rel_widths = c(1, 2))
-cp
+p1
+p2
 ```
+
+
 
 
 ### Specific investigations on Amadeus Basin
