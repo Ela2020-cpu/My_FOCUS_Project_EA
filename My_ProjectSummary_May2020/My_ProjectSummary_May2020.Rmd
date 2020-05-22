@@ -56,14 +56,14 @@ main_file <- NT_Wells %>% filter(Status=="Abandoned") %>% rename("RigReleaseDate
 groupbybasin <- main_file  %>%   group_by(Basin)%>% summarise(num_rows=n())%>% arrange(num_rows) %>% rename("Number_of_Wells"="num_rows")
 p1<-ggplot(data=groupbybasin,mapping = aes(x=Basin,y=Number_of_Wells))+geom_bar(stat="identity", fill="darkblue")+
   theme_minimal()+theme(axis.text.x = element_text(angle = 90))+transition_states(Basin)
-a_gif <- animate(p1)#, width = 140, height = 240)
+a_gif <- animate(p1)
 
 p2<-ggplot(data=main_file,mapping = aes(x=Basin,y=RigReleaseDate,color=HydrocarbonShows))+geom_point()+
   theme_minimal()+theme(axis.text.x = element_text(angle = 90))+ scale_y_continuous(limits=c(1950,2020),breaks=c(1950,1960,1970,1980,1990,2000,2010,2020),
  label=c("1950","1960","1970","1980","1990","2000","2010","2020"))+
 scale_colour_manual(values = c("darkblue", "#FF9999", "#FF9999","#FF9999", "darkblue", "#FF9999", "darkblue", "#FF9999"))+transition_states(HydrocarbonShows)
 
-b_gif <- animate(p2)#, width = 240, height = 240)
+b_gif <- animate(p2)
 
 a_mgif <- image_read(a_gif)
 b_mgif <- image_read(b_gif)
