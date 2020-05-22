@@ -2,7 +2,7 @@
 title: Improved Approaches to Long-Term Monitoring of Decommissioned Onshore Gas Wells in the Northern Territory
 author:  Elaheh Arjomand
 affiliation: Energy Business Unit # Or group/team
-photo: C:/Data_School/My_FOCUS_Project_EA/image/EA2.JPG
+photo: C:/Data_School/My_FOCUS_Project_EA/My_Summary/My_ProjectSummary_May2020/image/EA2.JPG
 
 output: DSreport::project_summary
 ---
@@ -28,7 +28,7 @@ I am Elaheh Arjomand and I am doing a Post-doc fellowship on the subject of well
 # My Project
 In this project, the emphasis is placed on the investigations to determine the optimum approaches for monitoring wells after decommissioning in the Northern Territory. 
 <center>
-![](C:/Data_School/My_FOCUS_Project_EA/image/well.jpg)
+![](C:/Data_School/My_FOCUS_Project_EA/My_Summary/My_ProjectSummary_May2020/image/well.jpg)
 </center>
 
 
@@ -49,7 +49,7 @@ library(gganimate)
 library(ggplot2)
 library(cowplot)
 library(magick)
-NT_Wells<- read_excel("C:/Data_School/My_FOCUS_Project_EA/data/NT Petroleum Wells.xlsx")
+NT_Wells<- read_excel("C:/Data_School/My_FOCUS_Project_EA/My_Summary/My_ProjectSummary_May2020/data/NT Petroleum Wells.xlsx")
 main_file <- NT_Wells %>% filter(Status=="Abandoned") %>% rename("RigReleaseDate"="Rig Release Date","TitleID"="Title ID",
 "WellName"= "Well Name","TotalDepthDate"="Total Depth Date","HydrocarbonShows"="Hydrocarbon Shows") %>% 
   mutate(RigReleaseDate=year(RigReleaseDate))%>% drop_na(HydrocarbonShows)
@@ -85,7 +85,7 @@ new_gif
 Amadeus Basin held the greatest number of abandoned wells in the NT. Therefore, further investigation on regards to the number of gas wells, the utilised legislations,the operators companies, and the rig release date (abandonment date) is required.
 
 ```{r Amadeus Basin, echo=FALSE}
-NT_Wells<- read_excel("C:/Data_School/My_FOCUS_Project_EA/data/NT Petroleum Wells.xlsx")
+NT_Wells<- read_excel("C:/Data_School/My_FOCUS_Project_EA/My_Summary/My_ProjectSummary_May2020/data/NT Petroleum Wells.xlsx")
 AM <- NT_Wells %>% filter(Status=="Abandoned") %>% rename("RigReleaseDate"="Rig Release Date","TitleID"="Title ID",
 "WellName"= "Well Name","TotalDepthDate"="Total Depth Date","HydrocarbonShows"="Hydrocarbon Shows") %>% 
   mutate(RigReleaseDate=year(RigReleaseDate))%>% drop_na(HydrocarbonShows) %>% filter (Basin=="Amadeus Basin")
@@ -107,10 +107,10 @@ plot5<- ggplot(data = AM,
 cp3<- plot_grid(p_up,plot5,nrow =2)
 title <- ggdraw() + draw_label("Amadeus Basin",fontface = 'bold', x = 0,hjust = 0)+ theme(plot.margin = margin(0, 0, 0, 7))
 final<- plot_grid(title,cp3,nrow=3,rel_heights = c(0.1,1))
-ggsave(plot=final,path="C:/Data_School/My_FOCUS_Project_EA/image", width =15, height = 15, dpi = 300, filename = "AM_Basin.png")
+ggsave(plot=final,path="C:/Data_School/My_FOCUS_Project_EA/My_Summary/My_ProjectSummary_May2020/image", width =15, height = 15, dpi = 300, filename = "AM_Basin.png")
 ```
 <center>
-![](C:/Data_School/My_FOCUS_Project_EA/image/AM_Basin.png)
+![](C:/Data_School/My_FOCUS_Project_EA/My_Summary/My_ProjectSummary_May2020/image/AM_Basin.png)
 </center>
 
 # My Digital Toolbox
@@ -118,7 +118,7 @@ ggsave(plot=final,path="C:/Data_School/My_FOCUS_Project_EA/image", width =15, he
 My favourite toolboxes are:
 
 
-![](https://raw.githubusercontent.com/tidyverse/ggplot2/master/man/figures/logo.png){width=90px}![](C:/Data_School/My_FOCUS_Project_EA/image/cowplot.png){width=90px}![](C:/Data_School/My_FOCUS_Project_EA/image/gganimate.png){width=90px}
+![](https://raw.githubusercontent.com/tidyverse/ggplot2/master/man/figures/logo.png){width=90px}![](C:/Data_School/My_FOCUS_Project_EA/My_Summary/My_ProjectSummary_May2020/image/cowplot.png){width=90px}![](C:/Data_School/My_FOCUS_Project_EA/My_Summary/My_ProjectSummary_May2020/image/gganimate.png){width=90px}
 
 # My time went ...
 I spent most of my time plotting different graphs and choosing which ones deliver the right messages to the audience.
