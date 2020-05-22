@@ -58,7 +58,7 @@ p1<-ggplot(data=groupbybasin,mapping = aes(x=Basin,y=Number_of_Wells))+geom_bar(
 p2<-ggplot(data=main_file,mapping = aes(x=Basin,y=RigReleaseDate,color=HydrocarbonShows))+geom_point()+
   theme_minimal()+theme(axis.text.x = element_text(angle = 90))+ scale_y_continuous(limits=c(1950,2020),breaks=c(1950,1960,1970,1980,1990,2000,2010,2020),
  label=c("1950","1960","1970","1980","1990","2000","2010","2020"))+
-scale_colour_manual(values = c("darkblue", "#FF9999", "#FF9999","#FF9999", "darkblue", "#FF9999", "darkblue", "#FF9999"))#+transition_states(HydrocarbonShows)
+scale_colour_manual(values = c("darkblue", "#FF9999", "#FF9999","#FF9999", "darkblue", "#FF9999", "darkblue", "#FF9999"))+transition_states(HydrocarbonShows)
 cp<- plot_grid(p1,p2,rel_widths = c(1, 2))
 cp
 ```
