@@ -96,52 +96,23 @@ ggsave(plot=final,path="C:/Data_School/My_FOCUS_Project_EA/image", width =15, he
 ![](C:/Data_School/My_FOCUS_Project_EA/image/AM_Basin.png)
 </center>
 
+# My Digital Toolbox
+
+My favourite toolboxes are:
 
 
+![](https://raw.githubusercontent.com/tidyverse/ggplot2/master/man/figures/logo.png){width=90px}![](C:/Data_School/My_FOCUS_Project_EA/image/cowplot.png){width=90px}![](C:/Data_School/My_FOCUS_Project_EA/image/gganimate.png){width=90px}
 
-**Images from a file**
+# My time went ...
+I spent most of my time plotting different graphs and choosing which ones deliver the right messages to the audience.
 
-![](resources/img/tidyverse.png){width=100px}
+
+# Next steps
+I have learned a lot about making a dataset tidy and how to use ggplot to demonstrate the purpose of the data visually. I would like to learn more about data visualization aspects to be applied in the upcoming stages of this project including heatmaps. 
+
+# My Data School Experience
+I have got excellent experiences regarding tidying the data and version controls of different documents. I am sure I will be applying these lessons from now on. 
 
 ```
 
-Your figure and table captions are automatically numbered and can be referenced in the text
-if needed: see eg. Table \@ref(tab:mytable) and Figure \@ref(fig:standard-plot)
 
-# My Digital Toolbox
-
-What digital tools have you been using in your project? Do you expect that everything will be able 
-to be completed within R, or will you need to work with multiple tools to get the right result?
-Which of the digital skills needed for your project have you learned since starting Data School?
-
-You can use all the usual R markdown features in writing a project summary, including lists:
-
-* R - dplyr, ggplot, ...
-* Python
-* SQL
-
-## Favourite tool (optional)
-
-Is there a tool/package/function in particular that you've enjoyed using? Give it a special shout out here. What about this tool makes it your favourite?
-
-![](https://raw.githubusercontent.com/tidyverse/ggplot2/master/man/figures/logo.png){.pull-right width=100px}
-
-No prizes for guessing mine:
-
-# My time went ...
-
-What parts of your project take the most time and effort? Were there any surprising challenges you
-encountered, and how did you solve them?
-
-# Next steps
-
-What further steps do you wish your project could take? Or are there any new digital skills that you
-are keen to develop as a result of your involvement in the Data School?
-
-# My Data School Experience
-
-This summary is mostly about your project. However we would also like to hear about other
-parts of your Data School experience. What aspects of the program did you really enjoy? Have you
-tried applying the skills you have learned in your daily work? Have you been able to transfer this 
-knowledge to your team members? Any descriptions of the personal impact the program has 
-had are welcome here as well!
